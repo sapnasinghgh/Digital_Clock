@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(4, 48, 48);
+          
+        }
+
+     .container{
+       
+        align-items: center;
+        justify-content: center;
+        margin-left: 500px;
+        margin-top: 200px;
+     }
+     .text{
+      
+        color: white;
+        font-size: 30px;
+        
+
+     }
+     .btn{
+        margin-left: 30px;
+        margin-top: 30px;
+     }
+    .btn #stop{
+       width: 80px;
+       height: 40px;
+       background-color: rgb(194, 60, 60);
+       border-radius: 10px;
+       border: none;
+    }
+     .btn #stop:hover{
+        background-color: rgb(196, 129, 129) ;
+        cursor: pointer;
+     }
+      .btn #start{
+       width: 80px;
+       height: 40px;
+       background-color: green;
+       border-radius: 10px;
+       border: none;
+       margin-left: 20px;
+    }
+     .btn #start:hover{
+        background-color: rgb(80, 185, 80) ;
+        cursor: pointer;
+     }
+     .heading{
+        font-size: 30px;
+        color: rgb(204, 204, 119);
+        margin-top: 100px;
+        margin-left: 10px;
+     }
+
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+        <h1>00:00:00</h1>
+        </div>
+        <div class="btn">
+            <button id="stop">Stop</button>
+            <button id="start">Start</button>
+
+        </div>
+
+        <div class="heading">
+        <h3>Digital Clock</h3>
+        </div>
+     
+
+    </div>
+
+    <script>
+       const text = document.querySelector("h1")
+       const start= document.querySelector("#start")
+
+
+
+    
+      
+        start.addEventListener("click", () => {
+           
+             let starttime= setInterval(() => {
+                  const date = new Date()
+                  let time = date.toLocaleTimeString()
+                  console.log(time);
+                  text.innerHTML = time
+
+              }, 1000);
+
+            const stop = document.querySelector("#stop")
+
+            stop.addEventListener("click", () => {
+                clearInterval(starttime)
+            })
+
+            })
+      
+       
+    
+
+  
+
+      
+    </script>
+</body>
+</html>
